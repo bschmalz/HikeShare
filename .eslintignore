@@ -1,0 +1,6 @@
+*/node_modules/*
+*.md
+registerServiceWorker.js
+*/build/*
+package.json
+package-lock.json

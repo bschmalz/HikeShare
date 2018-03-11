@@ -1,32 +1,38 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+
+
 import * as actions from '../actions';
 
 import Header from './Header';
 import Landing from './Landing';
 
-const Dashboard = () => <h2>Dashboard</h2>
+const Dashboard = () => <h2>Dashboard</h2>;
 
 class App extends Component {
-  
   componentDidMount() {
     this.props.fetchUser();
   }
-  
+
   render() {
     return (
-      <div className='container'>
+      <div className="container">
         <BrowserRouter>
           <div>
             <Header />
-            <Route exact path='/' component={Landing} />
-            <Route exact path='/dashboard' component={Dashboard} />
+            <Route exact path="/" component={Landing} />
+            <Route exact path="/dashboard" component={Dashboard} />
           </div>
         </BrowserRouter>
       </div>
     );
   }
 }
+
+App.propTypes = {
+  fetchUser: PropTypes.func.isRequired,
+};
 
 export default connect(null, actions)(App);
