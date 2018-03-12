@@ -25,7 +25,9 @@ class Header extends Component {
           >
             Emaily
           </Link>
+
           <ul className="right">
+            <li><Link to="/dashboard">Dash</Link></li>
             {this.renderContent()}
           </ul>
         </div>
